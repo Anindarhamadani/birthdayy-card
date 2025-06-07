@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happybidii Abah nunn</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    body {
+      background-image: url(https://i.pinimg.com/736x/ac/64/d5/ac64d5a15de5c2ce22ddf60f3256a934.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+ 
+</head>
+<body class="flex justify-center items-center min-h-screen p-4">
+  <div class="bg-white border-4 border-[#8B4513] shadow-lg shadow-[#D2B48C] rounded-xl text-center animate__animated animate__backInDown w-full max-w-md sm:max-w-lg md:max-w-xl p-6 sm:p-8" id="kartu">
+    <h1 class="text-2xl sm:text-3xl text-[#8B4513]">Serta Mulia</h1>
+    <h2 class="text-2xl sm:text-4xl font-bold animate__animated animate__pulse animate__infinite text-[#8B4513]">Anggara Satria Pamungkas</h2>
+    <button class="p-2 bg-[#8B4513] text-white rounded mt-5 hover:bg-[#C1A175] transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="ubahKartu()">Klik klik!!</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+
+    let kartu = document.getElementById("kartu");
+
+    function ubahKartu() {
+      kartu.innerHTML = `
+        <h1 class="font-semibold text-lg sm:text-xl animate__animated animate__zoomIn text-[#8B4513]">Happy Birthday Abah nunn!!</h1>
+        <h2 class="mt-3 animate__animated animate__fadeIn text-[#8B4513] text-base sm:text-lg">- From : aninun -</h2>
+        <button class="p-2 bg-[#D2B48C] text-white rounded mt-5 hover:bg-[#C1A175] transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="ubahCard()">Nextt</button>
+      `;
+    }
+
+    function ubahCard() {
+      kartu.innerHTML = `
+        <p class="text-sm sm:text-base md:text-lg text-[#8B4513] animate__animated animate__zoomIn leading-relaxed text-justify">
+          Ka aku pernah baca di suatu buku, katanya di bumi kita yang kecil ini diciptain untuk nampung banyak kontradiksi di dalamnya —senang dan sedih, kaya dan miskin, untung dan rugi, orang baik dan orang jahat, semuanya ada di sini.
+          Jadi yaa wajar kalau bumi ini banyak lukanya, banyak cacatnya.
+          Karena dari awal penciptaannya pun, bumi diciptakan sebagai rumah untuk banyak kontradiksi.
+          Tapi dari banyaknya ketidaksempurnaan yang bumi ataupun kakak punya, aku harap kakak tetap menjalani hari dengan baik,
+          tetap menjalani hari dengan berani —berani menerima, berani memaafkan, dan berani mengikhlaskan.
+          Makasih udah sangat amat berani di setiap harinya.
+          Selamat mengulang 24 Juni untuk yang ke-23 kalinya!! Sehat selalu ya kaa~~
+        </p>
+        <h2 class="mt-4 animate__animated animate__fadeIn text-[#8B4513] text-sm sm:text-base">- To : my fav person -</h2>
+        <button class="p-2 bg-[#D2B48C] text-white rounded mt-5 hover:bg-[#C1A175] transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="referesh()">Tutup</button>
+      `;
+    }
+
+    function referesh() {
+      location.reload();
+    }
+  </script>
+  
+  <audio autoplay loop hidden muted id="bgAudio">
+  <source src="tulus.mp3" type="audio/mpeg" />
+</audio>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("bgAudio");
+    audio.muted = false;
+    audio.play().catch((e) => {
+      console.warn("Autoplay mungkin diblokir:", e);
+    });
+  });
+</script>
+
+</body>
+</html>
