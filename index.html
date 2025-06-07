@@ -25,19 +25,7 @@
     <h2 class="text-2xl sm:text-4xl font-bold animate__animated animate__pulse animate__infinite text-[#8B4513]">Anggara Satria Pamungkas</h2>
     <button class="p-2 bg-[#8B4513] text-white rounded mt-5 hover:bg-[#C1A175] transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="ubahKartu()">Klik klik!!</button>
   </div>
-  
-  <audio autoplay loop hidden muted id="bgAudio">
-  <source src="tulus.mp3" type="audio/mpeg" />
-</audio>
-<script>
-  window.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("bgAudio");
-    audio.muted = false;
-    audio.play().catch((e) => {
-      console.warn("Autoplay mungkin diblokir:", e);
-    });
-  });
-  
+ 
 </script>
   <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
   <script>
@@ -50,6 +38,7 @@
     let kartu = document.getElementById("kartu");
 
     function ubahKartu() {
+      document.getElementById("bgAudio").play();
       kartu.innerHTML = `
         <h1 class="font-semibold text-lg sm:text-xl animate__animated animate__zoomIn text-[#8B4513]">Happy Birthday Abah nunn!!</h1>
         <h2 class="mt-3 animate__animated animate__fadeIn text-[#8B4513] text-base sm:text-lg">- From : aninun -</h2>
@@ -77,6 +66,18 @@
       location.reload();
     }
   </script>
+
+<audio id="bgAudio" autoplay loop hidden>
+  <source src="tulus.mp3" type="audio/mpeg" />
+</audio>
+<script>
+  window.addEventListener("click", function () {
+    const audio = document.getElementById("bgAudio");
+    audio.play().catch((e) => {
+      console.warn("Gagal memutar audio:", e);
+    });
+  }, { once: true });
+</script>
 
 
 </body>
